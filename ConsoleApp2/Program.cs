@@ -22,6 +22,13 @@ namespace ConsoleApp2
             t.NumberKassa = 100;
             Console.WriteLine(  t.NumberKassa);
 
+            // Создание объекта Airplane
+            Airplane airplane = new Airplane("Boeing 747", 2005, 12345, new DateTime(2023, 5, 12), 300);
+
+            // получение и вывод описания объекта
+            string description = airplane.GetDescription();
+            Console.WriteLine( description );
+
             //todo: создать маршрут (Route), самолет из 3х мест
             //продать 2 билета с нормальными условиями 
             //вывести описание маршрута (в GetDescription должно показать проданные места)
