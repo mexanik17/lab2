@@ -15,12 +15,7 @@ namespace ConsoleApp2
             Console.WriteLine((int)DateTime.Today.DayOfWeek);
 
 
-            Ticket t = new Ticket();
-            var passenger = t.PassengerName;
-            t.NumberKassa = -10;
-            Console.WriteLine(  t.NumberKassa);
-            t.NumberKassa = 100;
-            Console.WriteLine(  t.NumberKassa);
+
 
             // Создание объекта Airplane
             Airplane airplane = new Airplane("Boeing 747", 2005, 12345, new DateTime(2023, 5, 12), 300);

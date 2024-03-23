@@ -8,6 +8,8 @@ namespace ConsoleApp2
 {
     internal class Ticket
     {
+        public string PassengerName { get; set; }
+        public int SeatNumber { get; set; }
         //todo: для всех классов сделать объявления переменных с новых строк
         //todo: для всех классов добавить св-ва для доступа к переменным
         //todo: для всех классов привести в порядок именование: поля с маленькой буквы в camelCase, свойства, методы, классы с большой (PascalCase)
@@ -25,37 +27,7 @@ namespace ConsoleApp2
         //todo: добавить ссылку на Route + метод SetRoute (его вызывать в момент продажи билета из класса Route)
 
 
-        public Ticket()
-        {
-            numberKassa = 1;
-        }
-
-        public string PassengerName
-        {
-            get 
-            {
-                return FIOPASS; 
-            }
-            set
-            {
-                FIOPASS = value;
-            }
-        }
-
-        public int NumberKassa
-        {
-            get
-            {
-                return numberKassa;
-            }
-            set
-            {
-                if( value > 0)
-                {
-                    numberKassa = value;
-                }
-            }
-        }
+ 
 
 
         public string GetDescription()

@@ -19,7 +19,33 @@ namespace ConsoleApp2
 
     internal class Route
     {
-        string RouteCode, StartingPoint, LastingPoint; // шифр маршрута, начальный пункт, конечный пункт;
+        // Создаем булевый массив для расписания вылетов, где каждый элемент представляет день недели
+        bool[] flightSchedule = new bool[7];
+        private List<Ticket> soldTickets = new List<Ticket>(); // Список проданных билетов
+
+        public string RouteCode { get; set; } // шифр маршрута
+        public string StartingPoint { get; set; } // начальный пункт,
+        public string LastingPoint { get; set; } // конечный пункт;
         public Airplane Airplane { get; set; } // Ссылка на Авиалайнер
+                                               
+        // Конструктор класса Route
+        public Route(string routeCode, string startingPoint, string lastingPoint)
+        {
+            RouteCode = routeCode;
+            StartingPoint = startingPoint;
+            LastingPoint = lastingPoint;
+
+            // Присваиваем значения по умолчанию (например, все дни недели выключены)
+            for (int i = 0; i < flightSchedule.Length; i++)
+            {
+                flightSchedule[i] = false;
+            }
+        }
+        // Метод для продажи билета на рейс
+        public void SellTicket(Ticket ticket)
+        {
+            soldTickets.Add(ticket);
+            Console.WriteLine($"Билет на рейс {RouteCode} продан: {ticket.PassengerName}");
+        }
     }
 }
