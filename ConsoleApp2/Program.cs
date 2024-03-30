@@ -12,16 +12,27 @@ namespace ConsoleApp2
         static void Main(string[] args)
         {
 
+
+            // Создание объекта Ticket
+            Ticket ticket = new Ticket()
+            {
+                PassengerName = "John Smith",
+                SeatNumber = 1
+                
+            };
+
+
             //Определение номера дня недели
             Console.WriteLine((int)DateTime.Today.DayOfWeek);
 
 
             // Создание объекта Airplane
-            Airplane airplane = new Airplane("Boeing 747", 2005, 12345, new DateTime(2023, 5, 12), 300);
+            Airplane airplane = new Airplane("Boeing 747", 2005, 12345, new DateTime(2023, 5, 12), 3);
 
-            // получение и вывод описания объекта
-            string description = airplane.GetDescription();
-            Console.WriteLine( description );
+
+            // Получение и вывод описания объекта
+            string airplaneDescription = airplane.GetDescription();
+            Console.WriteLine(airplaneDescription);
 
             // Создание маршрута
             Route route = new Route("ABC123", "CityA", "CityB", 3);
@@ -30,12 +41,24 @@ namespace ConsoleApp2
             route.SellTicket("Passenger1", 1, 1);
             route.SellTicket("Passenger2", 2, 2);
 
+            // Вывод описания маршрута
+            string routeDescription = route.GetDescription();
+            Console.WriteLine(routeDescription);
+
+
             route.SellTicket("Passenger3", 1, 2);
             route.SellTicket("Passenger4", 2, 2);
 
 
+            // Вывод описания маршрута после неудачных попыток продажи
+            routeDescription = route.GetDescription();
+            Console.WriteLine(routeDescription);
 
-           
+            // Вывод описания маршрута после продажи дополнительных билетов
+            routeDescription = route.GetDescription();
+            Console.WriteLine(routeDescription);
+
+
             //todo: создать маршрут (Route), самолет из 3х мест
             //продать 2 билета с нормальными условиями 
             //вывести описание маршрута (в GetDescription должно показать проданные места)
