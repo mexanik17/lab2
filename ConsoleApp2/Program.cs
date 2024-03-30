@@ -12,23 +12,8 @@ namespace ConsoleApp2
         static void Main(string[] args)
         {
 
-            Ticket ticket = new Ticket();
-            {
-               PassengerName = "John Smith",
-               SeatNumber = 1;
-            };
-
-            Route route = new Route("ABC123", "CityA", "CityB", 3);
-
-            // Продажа билета, передавая объект типа Ticket
-            route.SellTicket(ticket);
-            //Вывод описания маршрута
-            string routeDescription = route.GetDescription();
-            Console.WriteLine(routeDescription);
-            //определение номера дня недели
+            //Определение номера дня недели
             Console.WriteLine((int)DateTime.Today.DayOfWeek);
-
-
 
 
             // Создание объекта Airplane
@@ -38,9 +23,19 @@ namespace ConsoleApp2
             string description = airplane.GetDescription();
             Console.WriteLine( description );
 
+            // Создание маршрута
+            Route route = new Route("ABC123", "CityA", "CityB", 3);
 
-            
+            // Продажа билетов
+            route.SellTicket("Passenger1", 1, 1);
+            route.SellTicket("Passenger2", 2, 2);
 
+            route.SellTicket("Passenger3", 1, 2);
+            route.SellTicket("Passenger4", 2, 2);
+
+
+
+           
             //todo: создать маршрут (Route), самолет из 3х мест
             //продать 2 билета с нормальными условиями 
             //вывести описание маршрута (в GetDescription должно показать проданные места)

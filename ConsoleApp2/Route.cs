@@ -36,6 +36,7 @@ namespace ConsoleApp2
             StartingPoint = startingPoint;
             LastingPoint = lastingPoint;
             airplaneCapacity = capacity;
+            
 
             // Присваиваем значения по умолчанию (например, все дни недели выключены)
             for (int i = 0; i < flightSchedule.Length; i++)
@@ -69,11 +70,11 @@ namespace ConsoleApp2
                 Console.WriteLine($"Ошибка: место {seatNumber} уже продано.");
                 return;
             }
-
-            soldTickets.Add(passengerName);
+            Ticket ticket = new Ticket(passengerName, seatNumber);
+            soldTickets.Add(ticket);
             soldSeats.Add(seatNumber);
             Console.WriteLine($"Билет на рейс {RouteCode}");
         }
-          
+
     }
 }
