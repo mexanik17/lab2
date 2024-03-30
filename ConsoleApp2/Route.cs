@@ -42,10 +42,32 @@ namespace ConsoleApp2
             }
         }
         // Метод для продажи билета на рейс
-        public void SellTicket(Ticket ticket)
+        public void SellTicket(string passengerName, int dayOfWeek, int seatNumber)
         {
             soldTickets.Add(ticket);
-            Console.WriteLine($"Билет на рейс {RouteCode} продан: {ticket.PassengerName}");
+            Console.WriteLine($"Ошибка: Некорректный день недели. ") ;
+            return;
         }
+
+        if (!flightSchedule[DayOfWeek])
+        {
+            Console.WriteLine($"Ошибка: Рейс на день {DayOfWeek} не осуществляется.");
+            return;
+        }
+        if (soldSeats.Contains(seatNumber))
+        {
+            Console.WriteLine($"Ошибка: Место {seatNumber} уже продано.");
+            return;
+        }
+        if (soldSeats.Contains(SeatNumber))
+        {
+        Console.WriteLine($"Ошибка: место {seatNumber} уже продано.");
+        return;
+        }
+
+        soldTickets.Add(passengerName);
+        soldSeats.Add(seatNumber);
+
+Console.WriteLine($"");
     }
 }
