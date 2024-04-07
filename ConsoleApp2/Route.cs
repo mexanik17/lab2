@@ -76,5 +76,21 @@ namespace ConsoleApp2
             Console.WriteLine($"Билет на рейс {RouteCode}");
         }
 
+        public string GetDescription()
+        {
+            string description = $"Маршрут {RouteCode} из {StartingPoint} в {LastingPoint}. Проданные билеты: ";
+
+            if (soldTickets.Count == 0)
+            {
+                description += " нет проданных билетов.";
+            }
+            else
+            {
+                description += string.Join(", ", soldTickets);
+            }
+
+            return description;
+        }
+
     }
 }
